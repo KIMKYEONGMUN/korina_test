@@ -1,0 +1,236 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'Potta One';
+    src: url('font/PottaOne-Regular.eot');
+    src: url('font/PottaOne-Regular.eot?#iefix') format('embedded-opentype'),
+        url('font/PottaOne-Regular.woff2') format('woff2'),
+        url('font/PottaOne-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+body {
+    color: #d71820;
+    font-family: 'Potta One';
+}
+/* img {
+    width: 100%;
+    object-fit: cover;
+} */
+
+
+header {
+    width: 100%;
+    height: 100px;
+    border-bottom: 1px solid #efa3a6;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    transition: 0.6s;
+}
+header.on {
+    background-color: #d71820;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+}
+header svg path {
+    transition: 0.6s;
+}
+header.on svg path {
+    fill: #fff;
+}
+header .inner {
+    max-width: 1440px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .inner > ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .inner > ul li {
+    padding: 0 20px;
+    font-size: 20px;
+}
+header .inner .lang {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .inner .lang ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .inner .lang ul li {
+    margin-left: 20px;
+    color: #999;
+}
+header .inner .lang ul li.on {
+    color: #d71820;
+}
+header.on .inner .lang ul li.on {
+    color: #fff;
+}
+
+
+.main_visual {
+    width: 100%;
+    height: 1080px;
+    position: relative;
+}
+.main_visual figure {
+    position: absolute;
+}
+.main_visual .sea {
+    top: 260px;
+    width: 100%;
+    opacity: 0;
+    animation: sea 1s forwards;
+}
+@keyframes sea {
+    100% {opacity: 1;}
+}
+.main_visual .sea img {
+    width: 100%;
+    object-fit: cover;
+}
+.main_visual .slogan {
+    top: 210px;
+    left: -100%;
+    opacity: 0;
+    animation: slogan 1s 5.2s forwards;
+}
+@keyframes slogan {
+    50% {left: 40px;}
+    100% {left: 40px; opacity: 1;}
+}
+.main_visual .floating {
+    position: absolute;
+    right: 300px;
+    bottom: 760px;
+    animation: floating 4s 1.6s infinite;
+}
+@keyframes floating {
+    50% {transform: translateY(-20px);}
+    100% {transform: translateY(0);}
+}
+.main_visual .shipping {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    scale: 0.2;
+    transform-origin: right top;
+    animation: shipping 0.6s 1s forwards;
+}
+@keyframes shipping {
+    100% {bottom: -500px; opacity: 1; scale: 1;}
+}
+.main_visual .shipping .ship {
+    right: 0;
+    bottom: 0;
+}
+.main_visual .shipping .can {
+    width: 120px;
+    opacity: 0;
+}
+.main_visual .shipping .can5,
+.main_visual .shipping .can6 {
+    width: 180px;
+}
+.main_visual .shipping .can img {
+    width: 100%;
+    object-fit: cover;
+}
+.main_visual .shipping .can1 {
+    right: 300px;
+    bottom: 0;
+    transform: rotate(0);
+    animation: can1 0.6s 1.6s linear forwards;
+    will-change: transform; /* 떨림제거 */
+}
+@keyframes can1 {
+    50% {opacity: 1; bottom: 100px; transform: rotate(0);}
+    65% {opacity: 1; bottom: 200px; transform: rotate(-5deg);}
+    80% {opacity: 1; bottom: 300px; transform: rotate(-10deg);}
+    100% {opacity: 1; bottom: 250px; transform: rotate(-20deg);}
+}
+.main_visual .shipping .can2 {
+    right: 100px;
+    bottom: 0;
+    transform: rotate(0);
+    animation: can2 0.6s 2.2s linear forwards;
+}
+@keyframes can2 {
+    50% {opacity: 1; bottom: 70px; transform: rotate(0);}
+    65% {opacity: 1; bottom: 170px; transform: rotate(0);}
+    80% {opacity: 1; bottom: 270px; transform: rotate(5deg);}
+    100% {opacity: 1; bottom: 220px; transform: rotate(10deg);}
+}
+.main_visual .shipping .can3 {
+    right: 200px;
+    bottom: 0;
+    transform: rotate(0);
+    animation: can3 0.6s 2.8s linear forwards;
+}
+@keyframes can3 {
+    50% {opacity: 1; bottom: 50px; transform: rotate(0);}
+    65% {opacity: 1; bottom: 150px; transform: rotate(0);}
+    80% {opacity: 1; bottom: 250px; transform: rotate(0);}
+    100% {opacity: 1; bottom: 200px; transform: rotate(-5deg);}
+}
+.main_visual .shipping .can4 {
+    right: 0;
+    bottom: 0;
+    transform: rotate(60deg);
+    animation: can4 0.6s 3.4s linear forwards;
+}
+@keyframes can4 {
+    50% {opacity: 1; bottom: 30px; transform: rotate(60deg);}
+    65% {opacity: 1; bottom: 130px; transform: rotate(50deg);}
+    80% {opacity: 1; bottom: 230px; transform: rotate(40deg);}
+    100% {opacity: 1; bottom: 180px; transform: rotate(25deg);}
+}
+.main_visual .shipping .can5 {
+    right: 200px;
+    bottom: 0;
+    transform: rotate(0);
+    animation: can5 0.6s 4s linear forwards;
+}
+@keyframes can5 {
+    50% {opacity: 1; bottom: 150px; transform: rotate(0);}
+    65% {opacity: 1; bottom: 250px; transform: rotate(0);}
+    80% {opacity: 1; bottom: 350px; transform: rotate(0);}
+    100% {opacity: 1; bottom: 300px; transform: rotate(-5deg);}
+}
+.main_visual .shipping .can6 {
+    right: 20px;
+    bottom: 0;
+    transform: rotate(40deg);
+    animation: can6 0.6s 4.6s linear forwards;
+}
+@keyframes can6 {
+    50% {opacity: 1; bottom: 130px; transform: rotate(40deg);}
+    65% {opacity: 1; bottom: 230px; transform: rotate(40deg);}
+    80% {opacity: 1; bottom: 330px; transform: rotate(30deg);}
+    100% {opacity: 1; bottom: 280px; transform: rotate(20deg);}
+}
